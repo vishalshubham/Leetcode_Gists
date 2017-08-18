@@ -1,4 +1,3 @@
-package extras;
 
 import java.awt.Point;
 import java.util.*;

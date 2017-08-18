@@ -1,4 +1,3 @@
-package extras;
 import java.util.*;
 
 public class LongestIncreasingSubsequence {

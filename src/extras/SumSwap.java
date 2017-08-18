@@ -1,4 +1,3 @@
-package extras;
 
 // CTCI : 16.21
 

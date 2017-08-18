@@ -1,4 +1,3 @@
-package extras;
 
 class TreeNode{
 	int val;

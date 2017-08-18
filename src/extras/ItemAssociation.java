@@ -1,4 +1,3 @@
-package extras;
 
 import java.util.*;
 // http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/

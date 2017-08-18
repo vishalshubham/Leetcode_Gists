@@ -1,6 +1,8 @@
 
-public class MergeSort {
+public class CountInversions {
 
+	int count = 0;
+	
 	public void merge(int[] arr, int l, int m, int r) {
 		int size1 = m-l+1;
 		int size2 = r-m;
@@ -21,21 +23,23 @@ public class MergeSort {
 			else {
 				arr[k] = arr2[j];
 				j++;
+				count++;
 			}
 			k++;
 		}
 		
 		while(i<size1) {
 			arr[k] = arr1[i];
-			k++;
 			i++;
-		}
-		while(j<size2) {
-			arr[k] = arr2[j];
 			k++;
-			j++;
+			count++;
 		}
 		
+		while(j<size2) {
+			arr[k] = arr2[j];
+			j++;
+			k++;
+		}
 	}
 	
 	public void mergeSort(int[] arr, int l, int r) {
@@ -43,22 +47,24 @@ public class MergeSort {
 			int mid = (l+r)/2;
 			mergeSort(arr, l, mid);
 			mergeSort(arr, mid+1, r);
+			
 			merge(arr, l, mid, r);
 		}
 	}
 	
 	public void print(int[] arr) {
-		for(int i: arr) {
+		for(int i : arr) {
 			System.out.print(i + " ");
 		}
 		System.out.println();
 	}
 	
 	public static void main(String[] args) {
-		MergeSort ms = new MergeSort();
-		int[] arr = {1,3,-2,4,7,6};
-		ms.print(arr);
-		ms.mergeSort(arr, 0, arr.length-1);
-		ms.print(arr);
+		CountInversions ci = new CountInversions();
+		int[] arr = {1,4,2,6,3,9,7};
+		ci.print(arr);
+		ci.mergeSort(arr, 0, arr.length-1);
+		ci.print(arr);
+		System.out.println("Total inversions" + ci.count);
 	}
 }
